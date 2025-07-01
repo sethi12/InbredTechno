@@ -14,6 +14,7 @@ export default function Navbar() {
         <Link href="/contact" className="hover:text-blue-600">Contact</Link>
         <Link href="/PrivacyPolicy" className="hover:text-blue-600">Privacy</Link>
         <Link href="/TermsAndConditionPolicy" className="hover:text-blue-600">Terms</Link>
+         <Link href="/ShippingDelivery" className="hover:text-blue-600">Shipping</Link>
         <Link href="/RefundAndCancelation" className="hover:text-blue-600">Refund</Link>
       </nav>
     </header>
