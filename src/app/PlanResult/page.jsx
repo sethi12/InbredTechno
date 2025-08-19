@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { useSearchParams } from "next/navigation";
 
-export default function PlanResultClient() {
+export default function PlanResult() {
   const [message, setMessage] = useState("Checking payment...");
   const searchParams = useSearchParams();
   const order_id = searchParams.get("order_id");
