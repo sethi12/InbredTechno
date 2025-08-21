@@ -6,7 +6,7 @@ export default function Plans() {
   const [bubbles, setBubbles] = useState([]);
   const [loading, setLoading] = useState(false);
   const plans = [
-    { title: "1-Day Boost", price: "₹1", duration: "1 day", color: "cyan", highlight: false },
+    { title: "1-Day Boost", price: "₹19", duration: "1 day", color: "cyan", highlight: false },
     { title: "1-Week Boost", price: "₹99", duration: "7 days", color: "fuchsia", highlight: true },
     { title: "1-Month Boost", price: "₹249", duration: "30 days", color: "lime", highlight: false },
     { title: "Blue Tick", price: "₹199", duration: "Verified Badge", color: "purple", highlight: false },
