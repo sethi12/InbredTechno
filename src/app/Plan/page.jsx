@@ -6,19 +6,19 @@ export default function Plans() {
   const [bubbles, setBubbles] = useState([]);
   const [loading, setLoading] = useState(false);
   const plans = [
-    { title: "1-Day Boost", price: "₹19", duration: "1 day", color: "cyan", highlight: false },
+    { title: "1-Day Boost", price: "₹1", duration: "1 day", color: "cyan", highlight: false },
     { title: "1-Week Boost", price: "₹99", duration: "7 days", color: "fuchsia", highlight: true },
     { title: "1-Month Boost", price: "₹249", duration: "30 days", color: "lime", highlight: false },
     { title: "Blue Tick", price: "₹199", duration: "Verified Badge", color: "purple", highlight: false },
   ];
 
-  useEffect(() => {
+ useEffect(() => {
     const newBubbles = Array.from({ length: 20 }).map(() => ({
-      width: `${Math.random() * 5 + 3}px`,
-      height: `${Math.random() * 5 + 3}px`,
+      width: `${Math.random() * 10 + 5}px`,
+      height: `${Math.random() * 10 + 5}px`,
       top: `${Math.random() * 100}%`,
       left: `${Math.random() * 100}%`,
-      animationDuration: `${Math.random() * 4 + 3}s`,
+      animationDuration: `${Math.random() * 8 + 5}s`,
     }));
     setBubbles(newBubbles);
   }, []);
@@ -143,22 +143,47 @@ export default function Plans() {
 
             <div className="flex justify-center">
               <button
-                onClick={() =>
-                  initiatePayment(
-                    plan.price.replace("₹", ""),
-                    "sethichaitanya08@gmail.com",
-                    "9267926408"
-                  )
-                }
-                className="relative z-20 px-6 py-3 rounded-full font-semibold w-full sm:w-auto transition text-sm sm:text-base"
-                style={{
-                  background: plan.color,
-                  color: "black",
-                  boxShadow: `0 0 12px ${plan.color}, 0 0 25px ${plan.color}`,
-                }}
-              >
-                Buy Now
-              </button>
+      onClick={() =>
+        initiatePayment(
+          plan.price.replace("₹", ""),
+          "sethichaitanya08@gmail.com",
+          "9267926408"
+        )
+      }
+      disabled={loading}
+      className="relative z-20 px-6 py-3 rounded-full font-semibold w-full sm:w-auto transition text-sm sm:text-base flex items-center justify-center"
+      style={{
+        background: plan.color,
+        color: "black",
+        boxShadow: `0 0 12px ${plan.color}, 0 0 25px ${plan.color}`,
+      }}
+    >
+      {loading ? (
+        // Circular progress indicator (spinner)
+        <svg
+          className="animate-spin h-5 w-5 text-black"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+        >
+          <circle
+            className="opacity-25"
+            cx="12"
+            cy="12"
+            r="10"
+            stroke="currentColor"
+            strokeWidth="4"
+          ></circle>
+          <path
+            className="opacity-75"
+            fill="currentColor"
+            d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"
+          ></path>
+        </svg>
+      ) : (
+        "Buy Now"
+      )}
+    </button>
             </div>
           </div>
         ))}
