@@ -6,7 +6,7 @@ export default function Navbar() {
   return (
     <header className="flex items-center justify-between px-6 py-4 shadow-md bg-white dark:bg-gray-800">
       <div className="flex items-center gap-3">
-        <Image src="public/companylogo.jpg" alt="InbredTechno Logo" width={40} height={40} />
+        <Image src="/companylogo.jpg" alt="InbredTechno Logo" width={40} height={40} />
         <span className="text-2xl font-bold tracking-tight">InbredTechno</span>
       </div>
       <nav className="hidden sm:flex gap-5 text-sm font-medium">
