@@ -8,13 +8,13 @@ export default function Plan() {
   const initiatePayment = async () => {
     setLoading(true);
     try {
-      // const order_id = `order_${Date.now()}`;
+      const order_id = `order_${Date.now()}`;
 
       // Create order in backend
       const { payment_session_id } = (await axios.post(
         "https://inbredtechno-backend.onrender.com/api/payment/create-order",
         {
-          // order_id,
+          order_id,
           order_amount: 1,
           customer_id: "cust_001",
           customer_email: "test@example.com",
