@@ -62,7 +62,7 @@ export default function Plans() {
       cf.checkout({
         paymentSessionId: payment_session_id,
         redirectTarget: "_self",
-        redirectUrl: `/PlanResult?order_id=${order_id}`, // redirect to result page
+    redirectUrl: `/PlanResult?order_id=${order_id}&uid=${useruid}&email=${useremail}`// redirect to result page
       });
 
     } catch (err) {
